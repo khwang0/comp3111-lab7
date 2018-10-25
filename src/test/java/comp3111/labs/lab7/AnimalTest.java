@@ -20,5 +20,23 @@ public class AnimalTest {
 			a.eat();
 		assertEquals(a.isAlive(), false);
 	}
-
+	@Test
+	public void testPoo() {
+		Animal a = new Animal();
+		for(int i =0; i < 100; ++i)
+			a.poo();
+		assertEquals(a.isAlive(), false);
+	}
+	@Test
+	public void testInstant() {
+        Animal animals[] = new Animal[10];
+        for (int i=0; i<10 ; i++)
+			animals[i] = new Animal();
+        extracted(animals);
+	}
+	
+	private void extracted(Animal[] animals) {
+		for(int i=0; i<10; ++i)
+			assertNotNull(animals[i]);
+	}
 }
